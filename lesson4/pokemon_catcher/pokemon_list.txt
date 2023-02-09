@@ -1,0 +1,619 @@
+Pidgey
+#016
+Type Normal Flying
+
+Pidgeotto
+#017
+Type Normal Flying
+
+Pidgeot
+#018
+Type Normal Flying
+
+Spearow
+#021
+Type Normal Flying
+
+Fearow
+#022
+Type Normal Flying
+
+Jigglypuff
+#039
+Type Normal Fairy
+
+Mankey
+#056
+Type Fighting
+
+Primeape
+#057
+Type Fighting
+
+Machop
+#066
+Type Fighting
+
+Machoke
+#067
+Type Fighting
+
+Machamp
+#068
+Type Fighting
+
+Farfetch'd
+#083
+Type Fighting
+
+Poliwrath
+#062
+Type Water Fighting
+
+Heracross
+#214
+Type Bug Fighting
+
+Combusken
+#256
+Type Fire Fighting
+
+Meditite
+#307
+Type Fighting Psychic
+
+Medicham
+#308
+Type Fighting Psychic
+
+Lucario
+#448
+Type Fighting Steel
+
+Ekans
+#023
+Type Poison
+
+Arbok
+#024
+Type Poison
+
+Nidoran♀
+#029
+Type Poison
+
+Nidorina
+#030
+Type Poison
+
+Nidoran♂
+#032
+Type Poison
+
+Nidorino
+#033
+Type Poison
+
+Grimer
+#088
+Type Poison
+
+Muk
+#089
+Type Poison
+
+Koffing
+#109
+Type Poison
+
+Weezing
+#110
+Type Poison
+
+Nidoqueen
+#031
+Type Poison Ground
+
+Nidoking
+#034
+Type Poison Ground
+
+Zubat
+#041
+Type Poison Flying
+
+Golbat
+#042
+Type Poison Flying
+
+Galarian Slowbro
+#088
+Type Poison Psychic
+
+Alolan Grimer
+#088
+Type Poison Dark
+
+Bulbasaur
+#001
+Type Grass Poison
+
+Ivysaur
+#002
+Type Grass Poison
+
+Venusaur
+#003
+Type Grass Poison
+
+Weedle
+#013
+Type Bug Poison
+
+Kakuna
+#014
+Type Bug Poison
+
+Beedrill
+#015
+Type Bug Poison
+
+Oddish
+#043
+Type Grass Poison
+
+Gloom
+#044
+Type Grass Poison
+
+Vileplume
+#044
+Type Grass Poison
+
+Venonat
+#048
+Type Bug Poison
+
+Venomoth
+#049
+Type Bug Poison
+
+Bellsprout
+#069
+Type Grass Poison
+
+Weepinbell
+#070
+Type Grass Poison
+
+Victreebel
+#071
+Type Grass Poison
+
+Tentacool
+#072
+Type Water Poison
+
+Tentacruel
+#073
+Type Water Poison
+
+Gastly
+#092
+Type Ghost Poison
+
+Haunter
+#093
+Type Ghost Poison
+
+Gengar
+#094
+Type Ghost Poison
+
+Spinarak
+#167
+Type Bug Poison
+
+Ariados
+#168
+Type Bug Poison
+
+Qwilfish
+#211
+Type Water Poison
+
+Dustox
+#269
+Type Bug Poison
+
+Roselia
+#315
+Type Grass Poison
+
+Budew
+#406
+Type Grass Poison
+
+Roserade
+#407
+Type Grass Poison
+
+Venipede
+#543
+Type Bug Poison
+
+Whirlipede
+#544
+Type Bug Poison
+
+Scolipede
+#545
+Type Bug Poison
+
+Foongus
+#590
+Type Grass Poison
+
+Amoonguss
+#591
+Type Grass Poison
+
+Nihilego
+#793
+Type Rock Poison
+
+Toxel
+848
+Type Electric Poison
+
+Toxtrictiy
+#849
+Type Electric Poison
+
+Sandshrew
+#027
+Type Ground
+
+Sandslash
+#028
+Type Ground
+
+Diglett
+#050
+Type Ground
+
+Dugtrio
+#051
+Type Ground
+
+Cubone
+#104
+Type Ground
+
+Marowak
+#105
+Type Ground
+
+Caterpie
+#010
+Type Bug
+
+Metapod
+#011
+Type Bug
+
+Pinsir
+#127
+Type Bug
+
+Butterfree
+#012
+Type Bug Flying
+
+Weedle
+#013
+Type Bug Poison
+
+Kakuna
+#014
+Type Bug Poison
+
+Beedrill
+#015
+Type Bug Poison
+
+Paras
+#046
+Type Bug Grass
+
+Parasect
+#047
+Type Bug Grass
+
+Venonat
+#048
+Type Bug Poison
+
+Venomoth
+#049
+Type Bug Poison
+
+Scyther
+#123
+Type Bug Flying
+
+Gastly
+#092
+Type Ghost Poison
+
+Haunter
+#093
+Type Ghost Poison
+
+Gengar
+#094
+Type Ghost Poison
+
+Drifloon
+#425
+Type Ghost Flying
+
+Drifblim
+#426
+Type Ghost Flying
+
+Alolan Sandshrew
+#027
+Type Ice Steel
+
+Alolan Sandslash
+#028
+Type Ice Steel
+
+Alolan Diglett
+#050
+Type Ground Steel
+
+Alolan Dugtrio
+#051
+Type Ground Steel
+
+Magnemite
+#081
+Type Electric Steel
+
+Magneton
+#082
+Type Electric Steel
+
+Clefairy
+#035
+Type Fairy
+
+Clefable
+#036
+Type Fairy
+
+Cleffa
+#173
+Type Fairy
+
+Togepi
+#175
+Type Fairy
+
+Jigglypuff
+#039
+Type Normal Fairy
+
+Wigglytuff
+#040
+Type Normal Fairy
+
+Mr. Mime
+#122
+Type Psychic Fairy
+
+igglybuff
+#174
+Type Normal Fairy
+
+Marill
+#183
+Type Water Fairy
+
+Azumarill
+#184
+Type Water Fairy
+
+Mimikyu
+#778
+Type Ghost Fairy
+
+Pikachu
+#025
+Type Electric
+
+Raichu
+#026
+Type Electric
+
+Voltorb
+#100
+Type Electric
+
+Electrode
+#101
+Type Electric
+
+Electabuzz
+#125
+Type Electric
+
+Jolteon
+#135
+Type Electric
+
+Pichu
+#172
+Type Electric
+
+Mareep
+#179
+Type Electric
+
+Flaaffy
+#180
+Type Electric
+
+Ampharos
+#181
+Type Electric
+
+Elekid
+#239
+Type Electric
+
+Raikou
+#243
+Type Electric
+
+Magnemite
+#081
+Type Electric Steel
+
+Magneton
+#082
+Type Electric Steel
+
+Zapdos
+#145
+Type Electric Flying
+
+Dratini
+#147
+Type Dragon
+
+Dragonair
+#148
+Type Dragon
+
+Charmander
+#004
+Type Fire
+
+Charmeleon
+#005
+Type Fire
+
+Vulpix
+#037
+Type Fire
+
+Ninetales
+#038
+Type Fire
+
+Growlithe
+#058
+Type Fire
+
+Arcanine
+#059
+Type Fire
+
+Ponyta
+#077
+Type Fire
+
+Rapidash
+#078
+Type Fire
+
+Magmar
+#126
+Type Fire
+
+Flareon
+#136
+Type Fire
+
+Cyndaquil
+#155
+Type Fire
+
+Quilava
+#156
+Type Fire
+
+Squirtle
+#007
+Type Water
+
+Wartortle
+#008
+Type Water
+
+Blastoise
+#009
+Type Water
+
+Psidach
+#054
+Type Water
+
+Goldak
+#055
+Type Water
+
+Polivag
+#060
+Type Water
+
+Polyvirl
+#061
+Type Water
+
+Siil
+#086
+Type Water
+
+Shellder
+#090
+Type Water
+
+Crabby
+#098
+Type Water
+
+Kingler
+#099
+Type Water
+
+Horsi
+#116
+Type Water
+
+Anchors
+#117
+Type Water
+
+Goldin
+#118
+Type Water
+
+Siking
+#119
+Type Water
+
+Junk
+#120
+Type Water
+
+Magikarp
+#129
+Type Water
+
+Vaporeon
+#134
+Type Water

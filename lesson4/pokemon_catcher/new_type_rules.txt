@@ -1,0 +1,20 @@
+pokemon_type ball_color
+bug green
+dark black
+dragon azure
+electric yellow
+fairy dark-pink
+fighting dark-orange
+fire red
+flying dark-grey
+ghost violet
+grass green
+ground light-brown
+ice light-blue
+normal dirty-pink
+poison purple
+psychic pink
+rock dark-brown
+steel light-green
+water blue
+
