@@ -42,18 +42,18 @@ def read_data_from_file(file_name):
     print_with_dots("Открываем сохранение")
     with open(file_name, "r", encoding="utf-8") as f:
         name = f.readline().replace('\n', '')
-        health = f.readline()
-        if health:
-            health = int(health)
+        _health = f.readline()
+        if _health:
+            _health = int(_health)
         else:
-            health = MAX_HEALTH
-        happiness = f.readline()
-        if happiness:
-            happiness = int(happiness)
+            _health = MAX_HEALTH
+        _happiness = f.readline()
+        if _happiness:
+            _happiness = int(_happiness)
         else:
-            happiness = MAX_HAPPINESS
+            _happiness = MAX_HAPPINESS
 
-    return name, health, happiness
+    return name, _health, _happiness
 
 
 def write_data_to_file(file_name, name, health, happiness):
@@ -62,6 +62,7 @@ def write_data_to_file(file_name, name, health, happiness):
         f.write(name + '\n')
         f.write(str(health) + '\n')
         f.write(str(happiness) + '\n')
+    return name, health, happiness
 
 
 def clear_file(file_name):
@@ -71,67 +72,125 @@ def clear_file(file_name):
 
 
 def clear_screen():
+    time.sleep(0.5)
     os.system("cls" if os.name == "nt" else "clear")
 
 
 def get_data(file_name):
     print_with_dots("Получаем данные из файла")
-    health = 100
-    happiness = 50
-    if os.path.isfile(file_name):
+    if os.path.isfile(file_name) and os.stat(file_name).st_size > 0:
         name, health, happiness = read_data_from_file(file_name)
     else:
-        print_with_dots("Файла не существует")
+        print_with_dots("Файла не существует либо он пуст")
         name = input("Введите имя питомца: ")
-        write_data_to_file(file_name, name, health, happiness)
+        name, health, happiness = write_data_to_file(file_name, name, MAX_HEALTH, MAX_HAPPINESS)
 
-    return name, health, happiness
-
-
-def calculate_energy_left(total_energy, min_energy_cost, max_energy_cost):
-    return total_energy - min(random.randint(min_energy_cost, max_energy_cost), total_energy)
+    return name, MAX_HEALTH, MAX_HAPPINESS
 
 
-def simulate_activity(activity,  min_health_cost, max_health_cost, min_happiness_cost, max_happiness_cost, name, health, happiness, daily_energy):
-    print_with_dots(f"{name}: {activity}")
-    health = min(MAX_HEALTH, random.choice([health + random.randint(min_health_cost, max_health_cost), health - random.randint(min_health_cost, max_health_cost)]))
-    happiness = min(MAX_HAPPINESS, random.choice([happiness + random.randint(min_happiness_cost, max_happiness_cost), happiness - random.randint(min_happiness_cost, max_happiness_cost)]))
-    daily_energy = calculate_energy_left(daily_energy, min_health_cost, min_happiness_cost)
+def calculate_property(total_val, activity_val, max_val):
+    return min(total_val + activity_val, max_val)
+
+
+def simulate_activity(activity, name, health, happiness, daily_energy):
+    activity_val = random.choice(list(activity.keys()))
+    activity_choice = activity[activity_val]
+    print_with_dots(f"{name}: {activity_val}")
+    health = calculate_property(health, activity_choice["health"], MAX_HEALTH)
+    happiness = calculate_property(happiness, activity_choice["happiness"], MAX_HAPPINESS)
+    daily_energy = calculate_property(daily_energy, activity_choice["daily_energy"], MAX_ENERGY)
     write_data_to_file("tamagochi.txt", name, health, happiness)
     return health, happiness, daily_energy
 
 
 def play_game(name, health, happiness, daily_energy):
-    min_health_cost = 20
-    max_health_cost = 50
-    min_happiness_cost = 20
-    max_happiness_cost = 50
-    game_choice = random.choice(["играет в дурака", "играет в лото", "ведёт наблюдение за утками", "занимается шпионской деятельностью"])
-    health, happiness, daily_energy = simulate_activity(game_choice, min_health_cost, max_health_cost, min_happiness_cost, max_happiness_cost,  name, health, happiness, daily_energy)
+    values = {
+        "играет в дурака": {
+            "health": -10,
+            "happiness": 20,
+            "daily_energy": -20,
+        },
+        "наблюдает за утками": {
+            "health": -50,
+            "happiness": 50,
+            "daily_energy": -50,
+        },
+        "пускает мыльные пузыри": {
+            "health": -30,
+            "happiness": 40,
+            "daily_energy": -10,
+        },
+        "конструирует замок из песка": {
+            "health": -20,
+            "happiness": 10,
+            "daily_energy": -40,
+        }
+    }
+    health, happiness, daily_energy = simulate_activity(values, name, health, happiness, daily_energy)
     return health, happiness, daily_energy
 
 
 def sleep(name, health, happiness, daily_energy):
-    min_health_cost = 20
-    max_health_cost = 50
-    min_happiness_cost = 20
-    max_happiness_cost = 50
-    sleep_choice = random.choice(["жёстко спит", "быстро-быстро спит", "дремлет", "пускает слюни"])
-    health, happiness, daily_energy = simulate_activity(sleep_choice, min_health_cost, max_health_cost,
-                                                        min_happiness_cost, max_happiness_cost, name, health, happiness,
-                                                        daily_energy)
+    values = {
+        "жёстко спит": {
+            "health": 10,
+            "happiness": -20,
+            "daily_energy": -20,
+        },
+        "быстро-быстро спит": {
+            "health": 0,
+            "happiness": -10,
+            "daily_energy": -20,
+        },
+        "дремлет": {
+            "health": 30,
+            "happiness": 40,
+            "daily_energy": -20,
+        },
+        "пускает слюни": {
+            "health": -20,
+            "happiness": 10,
+            "daily_energy": -20,
+        },
+        "считает овец": {
+            "health": 10,
+            "happiness": -10,
+            "daily_energy": -20,
+        }
+    }
+    health, happiness, daily_energy = simulate_activity(values, name, health, happiness, daily_energy)
     return health, happiness, daily_energy
 
 
 def eat(name, health, happiness, daily_energy):
-    min_health_cost = 20
-    max_health_cost = 50
-    min_happiness_cost = 20
-    max_happiness_cost = 50
-    food_choice = random.choice(["жрёт макароны", "рубает капусту", "наслаждается сиропом", "хомячит крекеры"])
-    health, happiness, daily_energy = simulate_activity(food_choice, min_health_cost, max_health_cost,
-                                                        min_happiness_cost, max_happiness_cost, name, health, happiness,
-                                                        daily_energy)
+    values = {
+        "жрёт макароны": {
+            "health": 10,
+            "happiness": -20,
+            "daily_energy": -20,
+        },
+        "рубает капусту": {
+            "health": 0,
+            "happiness": -10,
+            "daily_energy": -20,
+        },
+        "наслаждается сиропом": {
+            "health": 30,
+            "happiness": 40,
+            "daily_energy": -20,
+        },
+        "хомячит крекеры": {
+            "health": -20,
+            "happiness": 10,
+            "daily_energy": -20,
+        },
+        "употребляет шашлындос": {
+            "health": 10,
+            "happiness": -10,
+            "daily_energy": -20,
+        }
+    }
+    health, happiness, daily_energy = simulate_activity(values, name, health, happiness, daily_energy)
     return health, happiness, daily_energy
 
 
@@ -158,14 +217,15 @@ if __name__ == "__main__":
 
         choice = input("Введите номер действия: ")
         if choice == "1":
-            health, happiness, daily_energy = play_game(tamagochi_name, tamagochi_health, tamagochi_happiness, daily_energy)
+            tamagochi_health, tamagochi_happiness, daily_energy = play_game(tamagochi_name, tamagochi_health, tamagochi_happiness, daily_energy)
         elif choice == "2":
-            health, happiness, daily_energy = sleep(tamagochi_name, tamagochi_health, tamagochi_happiness, daily_energy)
+            tamagochi_health, tamagochi_happiness, daily_energy = sleep(tamagochi_name, tamagochi_health, tamagochi_happiness, daily_energy)
         elif choice == "3":
-            health, happiness, daily_energy = eat(tamagochi_name, tamagochi_health, tamagochi_happiness, daily_energy)
+            tamagochi_health, tamagochi_happiness, daily_energy = eat(tamagochi_name, tamagochi_health, tamagochi_happiness, daily_energy)
         else:
             print_with_dots("Запущен процесс гибернации")
             sys.exit()
+        clear_screen()
     else:
         if tamagochi_health <= 0:
             print_with_dots(f"{tamagochi_name} отправился в Вальгаллу")
@@ -174,7 +234,7 @@ if __name__ == "__main__":
             print_with_dots(f"{tamagochi_name} ушёл в депрессию")
             clear_file("tamagochi.txt")
         elif daily_energy <= 0:
-            print_with_dots(f"{tamagochi_name} потратил все очки энергии")
+            print_with_dots(f"{tamagochi_name} потратил все очки энергии. Возвращайтесь позже")
         else:
             print_with_dots(f"{tamagochi_name} что-то сделал и всё сломалось")
     sys.exit()
